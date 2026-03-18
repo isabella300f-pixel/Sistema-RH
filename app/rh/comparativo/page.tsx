@@ -38,24 +38,24 @@ export default function ComparativoPage() {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-ecosystem-red border-t-transparent" />
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-venda-gold border-t-transparent" />
       </div>
     );
   }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Comparativo</h1>
-      <p className="mt-1 text-gray-300">Selecione até 3 colaboradores para comparar scores</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Comparativo</h1>
+      <p className="mt-1 text-venda-cream/80">Selecione até 3 colaboradores para comparar scores</p>
       <div className="mt-6 card-white p-6">
-        <p className="mb-4 text-sm text-gray-400">Clique para selecionar (máx. 3):</p>
+        <p className="mb-4 text-sm text-venda-cream/70">Clique para selecionar (máx. 3):</p>
         <div className="flex flex-wrap gap-2">
           {colaboradores.map((c) => (
             <button
               key={c.id}
               onClick={() => toggleSelecionado(c.id)}
               className={`rounded-lg px-4 py-2 text-sm ${
-                selecionados.includes(c.id) ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                selecionados.includes(c.id) ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"
               }`}
             >
               {c.nome}
@@ -65,15 +65,15 @@ export default function ComparativoPage() {
       </div>
       {chartData.length > 0 && (
         <div className="mt-8 card-white p-6">
-          <h2 className="text-lg font-semibold text-white">Score médio</h2>
+          <h2 className="text-lg font-semibold text-venda-cream">Score médio</h2>
           <div className="mt-4 h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                <XAxis dataKey="nome" stroke="#9ca3af" />
-                <YAxis stroke="#9ca3af" domain={[0, 5]} />
-                <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151" }} />
-                <Bar dataKey="score" fill="#3b82f6" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#78350f" />
+                <XAxis dataKey="nome" stroke="#c9a227" />
+                <YAxis stroke="#c9a227" domain={[0, 5]} />
+                <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #78350f" }} />
+                <Bar dataKey="score" fill="#c9a227" />
               </BarChart>
             </ResponsiveContainer>
           </div>

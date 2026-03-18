@@ -11,46 +11,46 @@ export default function ClimaPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Clima Organizacional</h1>
-      <p className="mt-1 text-gray-300">Pesquisas e resultados</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Clima Organizacional</h1>
+      <p className="mt-1 text-venda-cream/80">Pesquisas e resultados</p>
       <div className="mt-6 flex gap-2">
         <button
           onClick={() => setAba("pesquisas")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "pesquisas" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "pesquisas" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Pesquisas
         </button>
         <button
           onClick={() => setAba("resultados")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "resultados" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "resultados" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Resultados
         </button>
         <button
           onClick={() => setAba("dashboard")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "dashboard" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "dashboard" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Dashboard
         </button>
       </div>
       {aba === "pesquisas" && (
         <>
-          <button className="mt-6 rounded-lg bg-ecosystem-red px-4 py-2 text-white hover:opacity-90">
+          <button className="mt-6 rounded-lg bg-ecosystem-red px-4 py-2 text-venda-cream hover:opacity-90">
             Nova Pesquisa
           </button>
           <div className="mt-6 card-white overflow-hidden">
-            <table className="w-full divide-y divide-blue-500/30">
-              <thead className="bg-gray-800/50">
+            <table className="w-full divide-y divide-amber-900/30">
+              <thead className="bg-amber-900/20">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-white">Título</th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-white">Tipo</th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-white">Período</th>
-                  <th className="px-4 py-3 text-left text-sm font-medium text-white">Status</th>
+                  <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Título</th>
+                  <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Tipo</th>
+                  <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Período</th>
+                  <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-700">
+              <tbody className="divide-y divide-amber-900/30">
                 {pesquisas.map((p) => (
-                  <tr key={p.id} className="text-gray-300">
+                  <tr key={p.id} className="text-venda-cream/80">
                     <td className="px-4 py-3">{p.titulo}</td>
                     <td className="px-4 py-3">{p.tipo}</td>
                     <td className="px-4 py-3">{formatDate(p.dataInicio)} - {formatDate(p.dataFim)}</td>
@@ -62,8 +62,8 @@ export default function ClimaPage() {
           </div>
         </>
       )}
-      {aba === "resultados" && <div className="mt-6 card-white p-6 text-gray-400">Nenhum resultado disponível.</div>}
-      {aba === "dashboard" && <div className="mt-6 card-white p-6 text-gray-400">Dashboard em construção.</div>}
+      {aba === "resultados" && <div className="mt-6 card-white p-6 text-venda-cream/70">Nenhum resultado disponível.</div>}
+      {aba === "dashboard" && <div className="mt-6 card-white p-6 text-venda-cream/70">Dashboard em construção.</div>}
     </div>
   );
 }

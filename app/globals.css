@@ -4,12 +4,18 @@
 
 @layer components {
   .card-white {
-    @apply rounded-lg border border-gray-700 bg-gray-800/80 shadow-lg;
+    @apply rounded-lg border border-amber-900/30 bg-venda-charcoal/90 shadow-lg;
   }
   .card-white-header {
-    @apply border-b border-gray-700 px-4 py-3;
+    @apply border-b border-amber-900/30 px-4 py-3;
   }
   .bg-ecosystem-red {
     background-color: #c41e3a;
+  }
+  .bg-venda-dark {
+    background-color: #0d0d0d;
+  }
+  .text-venda-gold {
+    color: #c9a227;
   }
 }

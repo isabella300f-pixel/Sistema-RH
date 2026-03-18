@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
 import type { User } from "@/lib/types";
@@ -29,10 +30,10 @@ export function Layout({ user, menuItems, children }: LayoutProps) {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-900">
-      <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-gray-700 bg-gray-800/90">
-        <div className="flex h-16 items-center justify-center border-b border-gray-700">
-          <span className="text-lg font-bold text-white">Sistema RH</span>
+    <div className="flex min-h-screen bg-venda-dark">
+      <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r border-amber-900/30 bg-venda-charcoal/95">
+        <div className="flex items-center justify-center border-b border-amber-900/30 px-4 py-6">
+          <Image src="/logo.png" alt="Venda ComCiência" width={240} height={240} className="object-contain" priority />
         </div>
         <nav className="space-y-1 p-4">
           {menuItems.map((item) => {
@@ -43,10 +44,12 @@ export function Layout({ user, menuItems, children }: LayoutProps) {
                 key={item.href}
                 href={item.href}
                 className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition ${
-                  isActive ? "bg-blue-600 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                  isActive
+                    ? "bg-amber-900/40 text-venda-gold"
+                    : "text-venda-cream/80 hover:bg-amber-900/20 hover:text-venda-cream"
                 }`}
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-5 w-5 shrink-0" />
                 {item.label}
               </Link>
             );
@@ -54,13 +57,13 @@ export function Layout({ user, menuItems, children }: LayoutProps) {
         </nav>
       </aside>
       <div className="ml-64 flex-1">
-        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-gray-700 bg-gray-800/90 px-6">
-          <h1 className="text-xl font-semibold text-white">Módulo RH - Adriana</h1>
+        <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-amber-900/30 bg-venda-charcoal/95 px-6">
+          <h1 className="text-xl font-semibold text-venda-gold">Venda ComCiência Trainning</h1>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-300">{user.nome}</span>
+            <span className="text-sm text-venda-cream/80">{user.nome}</span>
             <button
               onClick={handleLogout}
-              className="rounded-lg bg-gray-700 px-4 py-2 text-sm text-white hover:bg-gray-600"
+              className="rounded-lg border border-amber-900/40 bg-amber-900/20 px-4 py-2 text-sm text-venda-gold hover:bg-amber-900/30"
             >
               Sair
             </button>

@@ -38,29 +38,29 @@ export default function RelatoriosPage() {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-ecosystem-red border-t-transparent" />
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-venda-gold border-t-transparent" />
       </div>
     );
   }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Relatórios</h1>
-      <p className="mt-1 text-gray-300">Exporte dados e relatórios</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Relatórios</h1>
+      <p className="mt-1 text-venda-cream/80">Exporte dados e relatórios</p>
       <div className="mt-8 space-y-6">
         <div className="card-white p-6">
-          <h2 className="text-lg font-semibold text-white">Relatório de Colaboradores</h2>
-          <p className="mt-2 text-sm text-gray-400">Exporta CSV com nome, cargo, área, gestor, score médio e total de avaliações.</p>
+          <h2 className="text-lg font-semibold text-venda-cream">Relatório de Colaboradores</h2>
+          <p className="mt-2 text-sm text-venda-cream/70">Exporta CSV com nome, cargo, área, gestor, score médio e total de avaliações.</p>
           <button
             onClick={exportCSV}
-            className="mt-4 rounded-lg bg-ecosystem-red px-4 py-2 text-white hover:opacity-90"
+            className="mt-4 rounded-lg bg-venda-gold px-4 py-2 text-venda-dark hover:opacity-90"
           >
             Exportar CSV
           </button>
         </div>
         <div className="card-white p-6">
-          <h2 className="text-lg font-semibold text-white">Relatórios disponíveis</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-gray-300">
+          <h2 className="text-lg font-semibold text-venda-cream">Relatórios disponíveis</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-venda-cream/80">
             <li>Colaboradores com scores</li>
             <li>Avaliações 1:1</li>
             <li>Treinamentos realizados</li>

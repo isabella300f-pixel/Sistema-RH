@@ -68,72 +68,72 @@ export default function ColaboradorPerfilPage() {
   if (loading || !colaborador) {
     return (
       <div className="flex justify-center py-12">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-ecosystem-red border-t-transparent" />
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-venda-gold border-t-transparent" />
       </div>
     );
   }
 
   return (
     <div>
-      <Link href="/rh/painel" className="mb-4 inline-block text-blue-400 hover:underline">
+      <Link href="/rh/painel" className="mb-4 inline-block text-venda-gold hover:underline">
         ← Voltar
       </Link>
-      <h1 className="text-3xl font-bold text-white">Perfil - {colaborador.nome}</h1>
-      <p className="mt-1 text-gray-300">{colaborador.cargo} • {colaborador.area}</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Perfil - {colaborador.nome}</h1>
+      <p className="mt-1 text-venda-cream/80">{colaborador.cargo} • {colaborador.area}</p>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <div className="card-white p-6">
-          <h2 className="text-lg font-semibold text-white">Dados</h2>
+          <h2 className="text-lg font-semibold text-venda-cream">Dados</h2>
           <dl className="mt-4 space-y-2 text-sm">
-            <div><dt className="text-gray-400">E-mail</dt><dd className="text-white">{colaborador.email}</dd></div>
-            <div><dt className="text-gray-400">Admissão</dt><dd className="text-white">{formatDate(colaborador.dataAdmissao)}</dd></div>
+            <div><dt className="text-venda-cream/70">E-mail</dt><dd className="text-venda-cream">{colaborador.email}</dd></div>
+            <div><dt className="text-venda-cream/70">Admissão</dt><dd className="text-venda-cream">{formatDate(colaborador.dataAdmissao)}</dd></div>
           </dl>
         </div>
 
         <div className="card-white p-6">
-          <h2 className="text-lg font-semibold text-white">Avaliações 1:1</h2>
+          <h2 className="text-lg font-semibold text-venda-cream">Avaliações 1:1</h2>
           {chartData.length > 0 ? (
             <div className="mt-4 h-48">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
-                  <XAxis dataKey="data" stroke="#9ca3af" />
-                  <YAxis stroke="#9ca3af" domain={[0, 5]} />
-                  <Tooltip contentStyle={{ backgroundColor: "#1f2937", border: "1px solid #374151" }} />
-                  <Bar dataKey="classificacao" fill="#3b82f6" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#78350f" />
+                  <XAxis dataKey="data" stroke="#c9a227" />
+                  <YAxis stroke="#c9a227" domain={[0, 5]} />
+                  <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #78350f" }} />
+                  <Bar dataKey="classificacao" fill="#c9a227" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           ) : (
-            <p className="mt-4 text-gray-400">Sem avaliações 1:1</p>
+            <p className="mt-4 text-venda-cream/70">Sem avaliações 1:1</p>
           )}
         </div>
       </div>
 
       <div className="mt-8 card-white p-6">
-        <h2 className="text-lg font-semibold text-white">Nova Avaliação RH</h2>
+        <h2 className="text-lg font-semibold text-venda-cream">Nova Avaliação RH</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="mt-4 space-y-4">
           <div>
-            <label className="block text-sm text-gray-400">Classificação (0-5)</label>
-            <input type="number" min={0} max={5} step={0.5} {...register("classificacao", { valueAsNumber: true })} className="mt-1 w-24 rounded border border-gray-600 bg-gray-800 px-3 py-2 text-white" />
+            <label className="block text-sm text-venda-cream/70">Classificação (0-5)</label>
+            <input type="number" min={0} max={5} step={0.5} {...register("classificacao", { valueAsNumber: true })} className="mt-1 w-24 rounded border border-amber-900/40 bg-venda-charcoal px-3 py-2 text-venda-cream" />
           </div>
           <div>
-            <label className="block text-sm text-gray-400">Observações</label>
-            <textarea {...register("observacoes")} className="mt-1 w-full rounded border border-gray-600 bg-gray-800 px-3 py-2 text-white" rows={3} />
+            <label className="block text-sm text-venda-cream/70">Observações</label>
+            <textarea {...register("observacoes")} className="mt-1 w-full rounded border border-amber-900/40 bg-venda-charcoal px-3 py-2 text-venda-cream" rows={3} />
           </div>
           <div>
-            <label className="block text-sm text-gray-400">Risco de desligamento</label>
-            <select {...register("riscoDesligamento")} className="mt-1 rounded border border-gray-600 bg-gray-800 px-3 py-2 text-white">
+            <label className="block text-sm text-venda-cream/70">Risco de desligamento</label>
+            <select {...register("riscoDesligamento")} className="mt-1 rounded border border-amber-900/40 bg-venda-charcoal px-3 py-2 text-venda-cream">
               <option value="baixo">Baixo</option>
               <option value="medio">Médio</option>
               <option value="alto">Alto</option>
             </select>
           </div>
           <div>
-            <label className="block text-sm text-gray-400">Intervenções</label>
-            <textarea {...register("intervencoes")} className="mt-1 w-full rounded border border-gray-600 bg-gray-800 px-3 py-2 text-white" rows={2} />
+            <label className="block text-sm text-venda-cream/70">Intervenções</label>
+            <textarea {...register("intervencoes")} className="mt-1 w-full rounded border border-amber-900/40 bg-venda-charcoal px-3 py-2 text-venda-cream" rows={2} />
           </div>
-          <button type="submit" className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+          <button type="submit" className="rounded-lg bg-venda-gold px-4 py-2 text-venda-dark hover:bg-venda-gold/90">
             Salvar Avaliação
           </button>
         </form>

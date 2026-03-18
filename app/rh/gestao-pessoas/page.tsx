@@ -29,27 +29,27 @@ export default function GestaoPessoasPage() {
   if (loading) {
     return (
       <div className="flex justify-center py-12">
-        <div className="h-12 w-12 animate-spin rounded-full border-4 border-ecosystem-red border-t-transparent" />
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-venda-gold border-t-transparent" />
       </div>
     );
   }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Gestão de Pessoas</h1>
-      <p className="mt-1 text-gray-300">Colaboradores e organograma</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Gestão de Pessoas</h1>
+      <p className="mt-1 text-venda-cream/80">Colaboradores e organograma</p>
       <div className="mt-6 flex flex-wrap gap-4">
         <input
           type="text"
           placeholder="Buscar..."
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
-          className="rounded-lg border border-gray-600 bg-gray-800 px-4 py-2 text-white placeholder-gray-500"
+          className="rounded-lg border border-amber-900/40 bg-venda-charcoal px-4 py-2 text-venda-cream placeholder-amber-200/50"
         />
         <select
           value={filtroArea}
           onChange={(e) => setFiltroArea(e.target.value)}
-          className="rounded-lg border border-gray-600 bg-gray-800 px-4 py-2 text-white"
+          className="rounded-lg border border-amber-900/40 bg-venda-charcoal px-4 py-2 text-venda-cream"
         >
           <option value="">Todas as áreas</option>
           {areas.map((a) => (
@@ -58,27 +58,27 @@ export default function GestaoPessoasPage() {
         </select>
       </div>
       <div className="mt-6 card-white overflow-hidden">
-        <table className="w-full divide-y divide-blue-500/30">
-          <thead className="bg-gray-800/50">
+        <table className="w-full divide-y divide-amber-900/30">
+          <thead className="bg-amber-900/20">
             <tr>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Nome</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Cargo</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Área</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Admissão</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Tempo de casa</th>
-              <th className="px-4 py-3 text-left text-sm font-medium text-white">Ações</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Nome</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Cargo</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Área</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Admissão</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Tempo de casa</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Ações</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-700">
+          <tbody className="divide-y divide-amber-900/30">
             {filtrados.map((c) => (
-              <tr key={c.id} className="text-gray-300">
+              <tr key={c.id} className="text-venda-cream/80">
                 <td className="px-4 py-3">{c.nome}</td>
                 <td className="px-4 py-3">{c.cargo ?? "-"}</td>
                 <td className="px-4 py-3">{c.area ?? "-"}</td>
                 <td className="px-4 py-3">{formatDate(c.dataAdmissao)}</td>
                 <td className="px-4 py-3">{getDaysSince(c.dataAdmissao)} dias</td>
                 <td className="px-4 py-3">
-                  <Link href={`/rh/colaboradores/${c.id}`} className="text-blue-400 hover:underline">
+                  <Link href={`/rh/colaboradores/${c.id}`} className="text-venda-gold hover:underline">
                     Ver Perfil
                   </Link>
                 </td>

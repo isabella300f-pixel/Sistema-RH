@@ -24,8 +24,8 @@ export default function HomePage() {
   }, [router]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900">
-      <div className="h-12 w-12 animate-spin rounded-full border-4 border-ecosystem-red border-t-transparent" />
+    <div className="flex min-h-screen items-center justify-center bg-venda-dark">
+      <div className="h-12 w-12 animate-spin rounded-full border-4 border-venda-gold border-t-transparent" />
     </div>
   );
 }

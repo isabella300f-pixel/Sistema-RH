@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sistema RH - Adriana",
-  description: "Módulo de Gestão de Pessoas",
+  title: "Venda ComCiência Trainning",
+  description: "Plataforma de Gestão e Desenvolvimento",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-gray-900 text-white antialiased">
+      <body className="min-h-screen bg-venda-dark text-venda-cream antialiased">
         {children}
       </body>
     </html>

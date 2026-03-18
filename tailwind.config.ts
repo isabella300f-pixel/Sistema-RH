@@ -10,6 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         "ecosystem-red": "#c41e3a",
+        "venda-gold": "#c9a227",
+        "venda-cream": "#f5f0e6",
+        "venda-charcoal": "#1a1a1a",
+        "venda-dark": "#0d0d0d",
       },
     },
   },

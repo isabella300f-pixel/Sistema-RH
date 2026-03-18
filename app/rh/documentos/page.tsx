@@ -11,42 +11,42 @@ export default function DocumentosPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white">Documentos</h1>
-      <p className="mt-1 text-gray-300">Documentos e compliance</p>
+      <h1 className="text-3xl font-bold text-venda-cream">Documentos</h1>
+      <p className="mt-1 text-venda-cream/80">Documentos e compliance</p>
       <div className="mt-6 flex gap-2">
         <button
           onClick={() => setAba("compliance")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "compliance" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "compliance" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Compliance
         </button>
         <button
           onClick={() => setAba("colaboradores")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "colaboradores" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "colaboradores" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Documentos de Colaboradores
         </button>
         <button
           onClick={() => setAba("vencimentos")}
-          className={`rounded-lg px-4 py-2 text-sm ${aba === "vencimentos" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`rounded-lg px-4 py-2 text-sm ${aba === "vencimentos" ? "bg-venda-gold text-venda-dark" : "bg-amber-900/20 text-venda-cream/80 hover:bg-amber-900/30"}`}
         >
           Vencimentos
         </button>
       </div>
       <div className="mt-6 card-white overflow-hidden">
         {aba === "compliance" && (
-          <table className="w-full divide-y divide-blue-500/30">
-            <thead className="bg-gray-800/50">
+          <table className="w-full divide-y divide-amber-900/30">
+            <thead className="bg-amber-900/20">
               <tr>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Tipo</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Título</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Versão</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Status</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Tipo</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Título</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Versão</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-700">
+            <tbody className="divide-y divide-amber-900/30">
               {docsCompliance.map((d) => (
-                <tr key={d.id} className="text-gray-300">
+                <tr key={d.id} className="text-venda-cream/80">
                   <td className="px-4 py-3">{d.tipo}</td>
                   <td className="px-4 py-3">{d.titulo}</td>
                   <td className="px-4 py-3">{d.versao ?? "-"}</td>
@@ -57,18 +57,18 @@ export default function DocumentosPage() {
           </table>
         )}
         {aba === "colaboradores" && (
-          <table className="w-full divide-y divide-blue-500/30">
-            <thead className="bg-gray-800/50">
+          <table className="w-full divide-y divide-amber-900/30">
+            <thead className="bg-amber-900/20">
               <tr>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Colaborador ID</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Tipo</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Título</th>
-                <th className="px-4 py-3 text-left text-sm font-medium text-white">Data Upload</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Colaborador ID</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Tipo</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Título</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-venda-cream">Data Upload</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-700">
+            <tbody className="divide-y divide-amber-900/30">
               {docsColab.map((d) => (
-                <tr key={d.id} className="text-gray-300">
+                <tr key={d.id} className="text-venda-cream/80">
                   <td className="px-4 py-3">{d.colaboradorId}</td>
                   <td className="px-4 py-3">{d.tipo}</td>
                   <td className="px-4 py-3">{d.titulo}</td>
@@ -79,7 +79,7 @@ export default function DocumentosPage() {
           </table>
         )}
         {aba === "vencimentos" && (
-          <div className="p-6 text-gray-400">Nenhum documento com vencimento próximo.</div>
+          <div className="p-6 text-venda-cream/70">Nenhum documento com vencimento próximo.</div>
         )}
       </div>
     </div>
