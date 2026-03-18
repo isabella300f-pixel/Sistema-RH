@@ -34,7 +34,7 @@ export default function AvaliacaoPage() {
     );
   }, []);
 
-  const areas = [...new Set(colaboradores.map((c) => c.area).filter(Boolean))];
+  const areas = Array.from(new Set(colaboradores.map((c) => c.area).filter(Boolean))) as string[];
   const filtrados = colaboradores.filter((c) => {
     const matchBusca = !busca || c.nome.toLowerCase().includes(busca.toLowerCase());
     const matchArea = !filtroArea || c.area === filtroArea;
