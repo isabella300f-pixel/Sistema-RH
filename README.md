@@ -25,6 +25,10 @@ npm run dev
 
 Acesse http://localhost:3000. O sistema simula login como Adriana e redireciona para `/rh/painel`.
 
+## Deploy (Vercel)
+
+Conecte este repositório ao [Vercel](https://vercel.com) para deploy automático.
+
 ## Estrutura de rotas
 
 | Rota | Descrição |
