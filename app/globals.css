@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card-white {
+    @apply rounded-lg border border-gray-700 bg-gray-800/80 shadow-lg;
+  }
+  .card-white-header {
+    @apply border-b border-gray-700 px-4 py-3;
+  }
+  .bg-ecosystem-red {
+    background-color: #c41e3a;
+  }
+}
