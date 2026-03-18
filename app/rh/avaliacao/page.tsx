@@ -12,8 +12,10 @@ import {
 import { calculateScore, formatDate } from "@/lib/utils";
 import type { Colaborador } from "@/lib/types";
 
+type ColaboradorComScore = Colaborador & { score: number; ultimaData?: string; risco: string };
+
 export default function AvaliacaoPage() {
-  const [colaboradores, setColaboradores] = useState<Colaborador[]>([]);
+  const [colaboradores, setColaboradores] = useState<ColaboradorComScore[]>([]);
   const [loading, setLoading] = useState(true);
   const [busca, setBusca] = useState("");
   const [filtroArea, setFiltroArea] = useState("");
@@ -91,7 +93,7 @@ export default function AvaliacaoPage() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-700">
-            {filtrados.map((c: Colaborador & { score: number; ultimaData?: string; risco: string }) => (
+            {filtrados.map((c) => (
               <tr key={c.id} className="text-gray-300">
                 <td className="px-4 py-3">{c.nome}</td>
                 <td className="px-4 py-3">{c.cargo ?? "-"} / {c.area ?? "-"}</td>
